@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS Client;
 CREATE TABLE User(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     userName varchar(50) UNIQUE NOT NULL,
-    password binary(64) NOT NULL,
+    password binary(255) NOT NULL,
     is_admin boolean NOT NULL
 );
 
