@@ -1,0 +1,29 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>200</x><y>230</y><w>240</w><h>190</h></coordinates><panel_attributes>Client
+--
+id : int UNIQUE PRIMARY AI NOT NULL
+first_name : varchar(50) NOT NULL
+last_name : varchar(50) NOT NULL
+birth_date ; Date NOT NULL
+adress ; varchar(95) NOT NULL
+city : varchar(35) NOT NULL
+mail : varchar(62) UNIQUE NOT NULL
+phone : varchar(15) UNIQUE NOT NULL
+has_books : boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>230</y><w>280</w><h>190</h></coordinates><panel_attributes>Book
+--
+id : int UNIQUE AI NOT NULL
+title : varchar(100) NOT NULL
+author : varchar(100) NOT NULL
+summary : varchar(400) NOT NULL
+release_date : Date NOT NULL
+category : varchar(50) NOT NULL
+for_child : boolean NOT NULL
+available : boolean
+client_id : int NULL
+FOREIGN KEY (client_id) REFERENCE Client(id)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>230</y><w>260</w><h>190</h></coordinates><panel_attributes>User
+--
+id: int UNIQUE PRIMARY KEY 
+userName : varchar(100) UNIQUE NOT NULL
+password : binary(64) NOT NULL
+is_admin : boolean</panel_attributes><additional_attributes></additional_attributes></element></diagram>
