@@ -1,5 +1,5 @@
 <?php
-class Dbh
+Abstract class Dbh
 {
     protected function connectToDatabase()
     {
