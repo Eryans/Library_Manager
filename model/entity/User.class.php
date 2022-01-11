@@ -10,10 +10,11 @@ class User extends Dbh
     protected function getUser(string $userName): ?array
     {
         try {
-            $sql = "SELECT * FROM User WHERE userName = :userName";
+            $sql = "SELECT id,username,is_admin FROM User WHERE userName = :userName";
             $stmt = $this->db->prepare($sql);
             $stmt->execute(["userName" => $userName]);
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result ? $result : null;
         } catch (PDO $e) {
             die("error getting User" . $e);
         }

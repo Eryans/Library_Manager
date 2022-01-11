@@ -16,7 +16,7 @@ class Login extends Dbh
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result["password"];
         } catch (PDOException $e) {
-            die($e);
+            die("Something went wrong ".$e);
         }
     }
 }
