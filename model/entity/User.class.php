@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "./../Dbh.class.php";
-class User extends Dbh
+Abstract class User extends Dbh
 {
     protected $db;
     public function __construct()

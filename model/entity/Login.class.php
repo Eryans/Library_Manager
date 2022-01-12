@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "./../Dbh.class.php";
-class Login extends Dbh
+Abstract class Login extends Dbh
 {
     protected $db;
     public function __construct()
@@ -14,7 +14,7 @@ class Login extends Dbh
             $stmt = $this->db->prepare($sql);
             $stmt->execute(["userName" => $userName]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result["password"];
+            return $result ? $result["password"] : "";
         } catch (PDOException $e) {
             die("Something went wrong ".$e);
         }
