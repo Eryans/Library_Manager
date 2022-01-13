@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . "/../model/DAO.php";
 
 function checkUserConnexion(string $userName, string $password): bool
 {
@@ -10,7 +9,7 @@ function checkUserConnexion(string $userName, string $password): bool
     }
     return false;
 }
-echo "<h1>Logging page</h1>";
+echo "<h1>Logging Controller</h1>";
 
 
 if (isset($_POST["submitConnexion"])) {
